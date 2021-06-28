@@ -373,7 +373,7 @@ section .container {
 }
 
 .section-title h2 {
-  font-size: 14px;
+  font-size: min(calc(1vw + 1vmin), 14px);
   font-weight: 500;
   padding: 0;
   line-height: 1px;
@@ -396,7 +396,7 @@ section .container {
 .section-title p {
   margin: 0;
   margin: -15px 0 15px 0;
-  font-size: 36px;
+  font-size: min(calc(1em + 2vw), 36px);
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
@@ -407,16 +407,19 @@ section .container {
 # Company
 --------------------------------------------------------------*/
 .company-logo {
-  width: 10%;
+  width: calc(8em + 1vmin);
 }
 
 .company .section-title * {
   font-family: "Optimo-Plain", sans-serif;
 }
 
+.company .section-title p {
+  font-size: min(4vw, 36px);
+}
+
 .company .call-to-action {
-  font-family: "Optimo-Plain", sans-serif;
-  font-size: 26px;
+  font-size: calc(2.5vw + 1vmin);
   padding-top: 1%;
   text-align: center;
 }
@@ -435,15 +438,17 @@ section .container {
 }
 
 
-
-
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
 .about-me .content h3 {
   font-weight: 700;
-  font-size: 26px;
+  font-size: min(calc(1em + 1vw), 26px);
   color: #18d26e;
+}
+
+.about-me .quote {
+  color: #35e888;
 }
 
 .about-me .content ul {
@@ -466,6 +471,21 @@ section .container {
   margin-right: 5px;
   color: #18d26e;
   line-height: 0;
+}
+
+.about-me .link-international:hover a {
+  color: #a72714;
+  background-color: #a72714;
+}
+
+.about-me .link-hass:hover a {
+  color: #02729f;
+  background-color: #02729f;
+}
+
+.about-me .link-thoughtspot:hover a {
+  color: #18d26e;
+  background-color: #18d26e;
 }
 
 .about-me .content p:last-child {
