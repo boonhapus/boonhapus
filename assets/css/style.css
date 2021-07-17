@@ -473,19 +473,16 @@ section .container {
   line-height: 0;
 }
 
-.about-me .link-international:hover a {
+.about-me #link-international:hover {
   color: #a72714;
-  background-color: #a72714;
 }
 
-.about-me .link-hass:hover a {
+.about-me #link-hass:hover {
   color: #02729f;
-  background-color: #02729f;
 }
 
-.about-me .link-thoughtspot:hover a {
-  color: #18d26e;
-  background-color: #18d26e;
+.about-me #link-thoughtspot:hover {
+  color: #ffffff;
 }
 
 .about-me .content p:last-child {
