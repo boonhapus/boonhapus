@@ -1,3 +1,18 @@
+function toggleActiveOnSibling (event) {
+    // 
+    //
+    //
+    var thisToRotate = $(event.target).closest('.to-rotate')
+
+    thisToRotate.removeClass('active');
+    
+    if ( thisToRotate.is(':last-child') ) {
+        thisToRotate.siblings('.to-rotate').first().addClass('active');
+    } else {
+        thisToRotate.next().addClass('active');
+    }
+}
+
 function replaceEsportsHours () {
   // At the time of writing this function, I had roughly 18,500 hours
   // totaled across accounts, git commit history estimates, and
@@ -48,6 +63,10 @@ function replaceRetirementYears () {
 
 
 (function() {
+  // Home Page
+  $('#rotator span').click(toggleActiveOnSibling);
+
+  // About Page
   replaceEsportsHours();
   replaceProgrammingYears();
   replaceRetirementYears();

@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.8);
 }
 
-#header h2 span:not(#wave) {
+#header h2 span:not(#wave):not(.to-rotate) {
   color: #fff;
   border-bottom: 2px solid #18d26e;
   padding-bottom: 6px;
@@ -239,6 +239,22 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
+/* Rotator-specific, highly specific */
+
+#header h2 span.to-rotate {
+  font-weight: bold;
+  display: none;
+}
+
+#header h2 span.to-rotate.active {
+  display: inline;
+}
+
+#header h2 span#hidden:not(#wave):not(.to-rotate) {
+  opacity: 0;
+  border-bottom: 0px;
+  padding-bottom: 0px;  
+}
 
 /*--------------------------------------------------------------
 # Navigation Menu
