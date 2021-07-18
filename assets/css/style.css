@@ -29,6 +29,10 @@
   100% { transform: scale(1) }
 }
 
+@keyframes fade-in-from-zero {
+  0% { opacity: 0; }
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -184,9 +188,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 36px;
   }
   #header h2 {
-    /*font-size: 20px;*/
     font-size: clamp(18px, 1.5em, 20px);
-    /*font-size: max(10vw, 20px);*/
     line-height: 30px;
   }
   #header .social-links {
@@ -253,6 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 #header h2 span.to-rotate.active {
   display: inline;
   cursor: pointer;
+  animation: fade-in-from-zero .6s ease-out;
 }
 
 #header h2 span.to-rotate .vowel::after {

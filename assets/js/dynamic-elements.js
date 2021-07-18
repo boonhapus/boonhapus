@@ -1,7 +1,10 @@
 function toggleActiveOnSibling (event) {
-    // 
+    // Implements a cLickable carousel of elements.
     //
-    //
+    // We're using the add/remove .active class trick here to toggle
+    // visibility (read: "display: [inline -> none];") of a particular
+    // element, and then make visible it's closest sibling, looping back
+    // around if we find ourselves at the end of the relatives chain.
     event.preventDefault();
 
     var thisToRotate = $(event.target).closest('.to-rotate')
