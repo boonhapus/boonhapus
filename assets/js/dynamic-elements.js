@@ -2,6 +2,8 @@ function toggleActiveOnSibling (event) {
     // 
     //
     //
+    event.preventDefault();
+
     var thisToRotate = $(event.target).closest('.to-rotate')
 
     thisToRotate.removeClass('active');
@@ -64,7 +66,7 @@ function replaceRetirementYears () {
 
 (function() {
   // Home Page
-  $('#rotator span').click(toggleActiveOnSibling);
+  $('#rotator span').mousedown(toggleActiveOnSibling);
 
   // About Page
   replaceEsportsHours();
