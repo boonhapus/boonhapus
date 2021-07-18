@@ -1,4 +1,35 @@
 /*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+@keyframes scale-in-out {
+    0% { transform: scale(1) }
+   20% { transform: scale(1.2) rotate(4.0deg) }
+   50% { transform: scale(1.25) rotate(-4.0deg) }
+   80% { transform: scale(1.2) rotate(4.0deg) }
+  100% { transform: scale(1) }
+}
+
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 @font-face {
@@ -489,7 +520,6 @@ section .container {
   margin-bottom: 0;
 }
 
-
 #face {
   animation-name: wave-animation;
   animation-duration: 2.5s;
@@ -504,26 +534,6 @@ section .container {
   animation-iteration-count: infinite;
   display: inline-block;
 }
-
-@keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
-}
-
-@keyframes scale-in-out {
-    0% { transform: scale(1) }
-   20% { transform: scale(1.2) rotate(4.0deg) }
-   50% { transform: scale(1.25) rotate(-4.0deg) }
-   80% { transform: scale(1.2) rotate(4.0deg) }
-  100% { transform: scale(1) }
-}
-
 
 /*--------------------------------------------------------------
 # Counts
@@ -607,24 +617,36 @@ section .container {
 # Client Logos
 --------------------------------------------------------------*/
 .clients .container {
-  background: rgba(0, 0, 0, 0.9);
+  background: white;
   padding-bottom: 70px;
 }
 
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.clients .logo-container {
+  background-color: #fff;
 }
 
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.clients .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /*grid-gap: .25rem;*/
+}
+
+.clients .grid > div {
+  background: #fff;
+  margin: .5rem;
+  position: relative;
+}
+
+.clients .grid > div::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.clients .grid img {
+  position: absolute;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
