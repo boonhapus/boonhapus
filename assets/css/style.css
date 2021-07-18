@@ -137,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.8);
 }
 
-#header h2 span {
+#header h2 span:not(#wave) {
   color: #fff;
   border-bottom: 2px solid #18d26e;
   padding-bottom: 6px;
@@ -230,6 +230,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 26px;
   }
 }
+
+#wave {
+  animation-name: wave-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;  /* Pivot around the bottom-left palm */ 
+  display: inline-block;
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
