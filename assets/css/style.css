@@ -125,16 +125,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
 }
 
-#header h1 a, #header h1 a:hover {
+#header h1 a,
+#header h1 a:hover {
   color: #fff;
   line-height: 1;
   display: inline-block;
+  cursor: default;
 }
 
 #header h2 {
   font-size: 24px;
   margin-top: 20px;
   color: rgba(255, 255, 255, 0.8);
+  cursor: default;
 }
 
 #header h2 span:not(#wave):not(.to-rotate) {
@@ -181,7 +184,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 36px;
   }
   #header h2 {
-    font-size: 20px;
+    /*font-size: 20px;*/
+    font-size: clamp(18px, 1.5em, 20px);
+    /*font-size: max(10vw, 20px);*/
     line-height: 30px;
   }
   #header .social-links {
@@ -242,12 +247,20 @@ h1, h2, h3, h4, h5, h6 {
 /* Rotator-specific, highly specific */
 
 #header h2 span.to-rotate {
-  font-weight: bold;
   display: none;
 }
 
 #header h2 span.to-rotate.active {
   display: inline;
+  cursor: pointer;
+}
+
+#header h2 span.to-rotate .vowel::after {
+  content: 'n ';
+}
+
+#header h2 span.to-rotate .consonant::after {
+  content: ' ';
 }
 
 #header h2 span#hidden:not(#wave):not(.to-rotate) {
