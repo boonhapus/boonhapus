@@ -55,8 +55,8 @@ function replaceProgrammingYears () {
 
 function replaceRetirementMonths () {
   // Not that I necessarily follow the --RE movement of FIRE, but I do
-  // have plans to be retireable by 45. That's what this date signfies.
-  const fireEndgame = new Date('2036-10-28');
+  // have plans to be retireable by 37. That's what this date signfies.
+  const fireEndgame = new Date('2028-10-28');
   const today = new Date();
 
   var diffMs = new Date(fireEndgame - today);
